@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="css/styles-homepage.css">
-    <link rel="stylesheet" href="normalize.min.css">
+    <link rel="stylesheet" href="css/normalize-min.css">
 </head>
 <body>
     <header class="header">
-        <div class="header__wrapper page">
-            <h1 class="header__logo">Entalon</h1>
-            <nav class="header__nav">
+        <div class="header__wrapper">
+            <h1 class="header__logo" id="homeLink">Entalon</h1>
+            <nav class="header__nav" id="headerNav">
+                <button class="header__nav-close" id="navClose">
+                    <svg fill="#000000" width="35px" height="35px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M0 14.545L1.455 16 8 9.455 14.545 16 16 14.545 9.455 8 16 1.455 14.545 0 8 6.545 1.455 0 0 1.455 6.545 8z" fill-rule="evenodd"></path> </g></svg>
+                </button>
                 <ul class="header__list">
                     <li class="header__item"><a href="#" class="header__link" data-target="welcome-section">Home</a></li>
                     <li class="header__item"><a href="#" class="header__link" data-target="company-section">About</a></li>
@@ -20,39 +23,54 @@
                     <li class="header__item"><a href="#" class="header__link" data-target="footer">Contact</a></li>
                 </ul>
             </nav>
+             <button class="header__menu-toggle" id="menuToggle">
+                <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 18L20 18" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M4 12L20 12" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> <path d="M4 6L20 6" stroke="#000000" stroke-width="2" stroke-linecap="round"></path> </g></svg>
+            </button>
         </div>
     </header>
     <main>
         <section class="welcome-section" id="welcome-section">
-            <div class="welcome-section__wrapper page">
-                <div class="welcome-section__wrapper--left">
+            <div class="welcome-section__wrapper">
+                <div class="welcome-section__wrapper_left">
                     <h1 class="welcome-section__title">Welcome!</h1>
                     <p class="welcome-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eget lectus massa. Suspendisse potenti. Aenean et lorem enim, molestie lobortis tortor. Sed sed lectus mi, vel feugiat odio.</p>
                     <p class="welcome-section__paragraph">Pellentesque sagittis tellus ac tortor viverra id dapibus nulla consectetur. In porttitor, odio sed auctor condimentum, diam neque venenatis lectus, in feugiat arcu mi ut lorem.</p>
                 </div>
                 <div class="welcome-section__pagination">
-                    <button class="welcome-section__arrow welcome-section__arrow--left" type="button">
+                    <button class="welcome-section__arrow welcome-section__arrow_left" type="button">
                         <img src="icons/arrow-circle.svg" alt="Left Arrow" width="30" height="30">
                     </button>
-                    <div class="welcome-section__image-title">Your Image Goes Here</div>
-                    <button class="welcome-section__arrow welcome-section__arrow--right" type="button">
+                    <div class="welcome-section__main-slider">
+                        <div class="welcome-section__main-slides">
+                            <div class="welcome-section__main-slide active">
+                                <img src="icons/slide1.jpg" alt="Slide 1">
+                            </div>
+                            <div class="welcome-section__main-slide">
+                                <img src="icons/slide2.jpg" alt="Slide 2">
+                            </div>
+                            <div class="welcome-section__main-slide">
+                                <img src="icons/slide3.jpg" alt="Slide 3">
+                            </div>
+                        </div>
+                    </div>
+                    <button class="welcome-section__arrow welcome-section__arrow_right" type="button">
                         <img src="icons/arrow-circle.svg" alt="Right Arrow" width="30" height="30">
                     </button>
                 </div>
             </div>
         </section>
-        <section class="portfolio-section page" id="portfolio-section">
+        <section class="portfolio-section" id="portfolio-section">
             <h2 class="portfolio-section__title">We love to create beautiful looking website</h2>
             <div class="portfolio-section__wrapper">
                 <button class="portfolio-section__button" type="button">
                     <div class="portfolio-section__wrap">View portfolio</div>
                     <div class="portfolio-section__arrow-right">
-                        <img src="icons/arrow.svg" alt="arrow" width="30" height="30">
+                        <svg width="30px" height="30px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10 7L15 12L10 17" stroke="#6b6b6b" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                     </div>
                 </button>
             </div>
         </section>
-        <section class="company-section page" id="company-section">
+        <section class="company-section" id="company-section">
             <div class="company-section__container">
                 <div class="company-section__container-left">
                     <h2 class="company-section__container-title">Who We Are</h2>
@@ -62,18 +80,18 @@
                 <div class="company-section__container-right">
                     <h2 class="company-section__container-title">Client testimonial</h2>
                     <div class="company-section__container-paragraphs">
-                        <p class="company-section__container-paragraphs--up">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac molestie arcu. Duis neque nisi, eleifend sed congue in, dignissim et turpis. Sed eget felis neque. Morbi posuere lacus sit amet."</p>
-                        <p class="company-section__container-paragraphs--down">- Someone</p>
+                        <p class="company-section__container-paragraphs_up">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac molestie arcu. Duis neque nisi, eleifend sed congue in, dignissim et turpis. Sed eget felis neque. Morbi posuere lacus sit amet."</p>
+                        <p class="company-section__container-paragraphs_down">- Someone</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="images-section page" id="images-section">
-                <div class="images-section__image">Your Image Goes Here</div>
-                <div class="images-section__image">Your Image Goes Here</div>
-                <div class="images-section__image">Your Image Goes Here</div>
+        <section class="images-section" id="images-section">
+                <div class="images-section__image image-1">Your Image Goes Here</div>
+                <div class="images-section__image image-2">Your Image Goes Here</div>
+                <div class="images-section__image image-3">Your Image Goes Here</div>
         </section>
-        <section class="services-section page" id="services-section">
+        <section class="services-section" id="services-section">
                 <div>
                     <h2>Quality Web Design</h2>
                     <p class="services-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ac molestie arcu. Duis neque nisi, eleifend sed congue.</p>
@@ -89,38 +107,69 @@
         </section>
     </main>
     <footer class="footer" id="footer">
-        <div class="footer__container page">
-            <div>
-                <h2 class="footer__container--title">Categories</h2>
-                <p class="footer__container--paragraph"><a href="#" class="footer__container--link">HTML & CSS</a></p>
-                <p class="footer__container--paragraph"><a href="#" class="footer__container--link">Javascript</a></p>
-                <p class="footer__container--paragraph"><a href="#" class="footer__container--link">News</a></p>
+    <div class="footer__container">
+        <div class="footer__column">
+            <button class="footer__toggle" data-target="categories">
+                <h2 class="footer__title">Categories</h2>
+                <span class="footer__toggle-icon">
+                    <svg width="30px" height="30px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(270)matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.528"></g><g id="SVGRepo_iconCarrier"> <path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#a8a8a8"></path> </g></svg>
+                </span>
+            </button>
+            <div class="footer__content" id="categories">
+                <p class="footer__paragraph"><a href="#" class="footer__link">HTML & CSS</a></p>
+                <p class="footer__paragraph"><a href="#" class="footer__link">Javascript</a></p>
+                <p class="footer__paragraph"><a href="#" class="footer__link">News</a></p>
             </div>
-            <div>
-                <h2 class="footer__container--title">Archives</h2>
-                <p class="footer__container--paragraph"><a href="#" class="footer__container--link">August 2010</a></p>
-                <p class="footer__container--paragraph"><a href="#" class="footer__container--link">July 2010</a></p>
+        </div>
+        
+        <div class="footer__column">
+            <button class="footer__toggle" data-target="archives">
+                <h2 class="footer__title">Archives</h2>
+                <span class="footer__toggle-icon">
+                    <svg width="30px" height="30px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(270)matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.528"></g><g id="SVGRepo_iconCarrier"> <path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#a8a8a8"></path> </g></svg>
+                </span>
+            </button>
+            <div class="footer__content" id="archives">
+                <p class="footer__paragraph"><a href="#" class="footer__link">August 2010</a></p>
+                <p class="footer__paragraph"><a href="#" class="footer__link">July 2010</a></p>
             </div>
-            <div >
-                <h2 class="footer__container--title">Social Media</h2>
-                <p class="footer__container--paragraph"><a href="#" class="footer__container--link">Twitter</a></p>
-                <p class="footer__container--paragraph"><a href="#" class="footer__container--link">Facebook</a></p>
-                <p class="footer__container--paragraph"><a href="#" class="footer__container--link">Youtube</a></p>
+        </div>
+        
+        <div class="footer__column">
+            <button class="footer__toggle" data-target="social">
+                <h2 class="footer__title">Social Media</h2>
+                <span class="footer__toggle-icon">
+                    <svg width="30px" height="30px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(270)matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.528"></g><g id="SVGRepo_iconCarrier"> <path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#a8a8a8"></path> </g></svg>
+                </span>
+            </button>
+            <div class="footer__content" id="social">
+                <p class="footer__paragraph"><a href="#" class="footer__link">Twitter</a></p>
+                <p class="footer__paragraph"><a href="#" class="footer__link">Facebook</a></p>
+                <p class="footer__paragraph"><a href="#" class="footer__link">Youtube</a></p>
             </div>
-            <div>
-                <h2 class="footer__container--title">Get in Touch</h2>
-                <div class="footer__container--wrapper">123 Street Address</div>
-                <div class="footer__container--wrapper">City, State, 12345</div>
-                <div class="footer__container--wrapper">Phone: (695)-595-5955</div>
-                <div class="footer__container--wrapper">
-                <a href="#" class="footer__container--link-email"> admin@site.com </a> 
+        </div>
+        
+        <div class="footer__column">
+            <button class="footer__toggle" data-target="contact">
+                <h2 class="footer__title">Get in Touch</h2>
+                <span class="footer__toggle-icon">
+                    <svg width="30px" height="30px" viewBox="-2.4 -2.4 28.80 28.80" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(270)matrix(-1, 0, 0, 1, 0, 0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.528"></g><g id="SVGRepo_iconCarrier"> <path d="M9.71069 18.2929C10.1012 18.6834 10.7344 18.6834 11.1249 18.2929L16.0123 13.4006C16.7927 12.6195 16.7924 11.3537 16.0117 10.5729L11.1213 5.68254C10.7308 5.29202 10.0976 5.29202 9.70708 5.68254C9.31655 6.07307 9.31655 6.70623 9.70708 7.09676L13.8927 11.2824C14.2833 11.6729 14.2833 12.3061 13.8927 12.6966L9.71069 16.8787C9.32016 17.2692 9.32016 17.9023 9.71069 18.2929Z" fill="#a8a8a8"></path> </g></svg>
+                </span>
+            </button>
+            <div class="footer__content" id="contact">
+                <div class="footer__wrapper">123 Street Address</div>
+                <div class="footer__wrapper">City, State, 12345</div>
+                <div class="footer__wrapper"> Phone: <a href="#" class="footer__link">(695)-595-5955</a></div>
+                <div class="footer__wrapper">
+                    <a href="#" class="footer__link-email">admin@site.com</a>
                 </div>
             </div>
         </div>
-        <div class="copyright">
-            <div class="page">© Copyright Entalon 2010. All Rights Reserved.</div>
-        </div>
-    </footer>
+    </div>
+    <div class="footer__copyright">
+        <div class="page">© Copyright Entalon 2010. All Rights Reserved.</div>
+    </div>
+</footer>
     <script src="js/scripts.js"></script>
 </body>
 </html>
