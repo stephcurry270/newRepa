@@ -103,47 +103,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     initFooterAccordion();
 });
-class WelcomeSlider {
-    constructor() {
-        this.slidesContainer = document.querySelector('.welcome-section__main-slides');
-        this.slides = document.querySelectorAll('.welcome-section__main-slide');
-        this.prevBtn = document.querySelector('.welcome-section__arrow_left');
-        this.nextBtn = document.querySelector('.welcome-section__arrow_right');
-        this.currentSlide = 0;
-        
-        this.init();
-    }
-    
-    init() {
-        this.updateSlider();
-        this.prevBtn.addEventListener('click', () => this.prevSlide());
-        this.nextBtn.addEventListener('click', () => this.nextSlide());
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'ArrowLeft') this.prevSlide();
-            if (e.key === 'ArrowRight') this.nextSlide();
-        });
-    }
-    updateSlider() {
-        this.slides.forEach(slide => {
-            slide.classList.remove('active');
-        });
-        this.slides[this.currentSlide].classList.add('active');
-    }
-    
-    nextSlide() {
-        this.currentSlide = (this.currentSlide + 1) % this.slides.length;
-        this.updateSlider();
-    }
-    
-    prevSlide() {
-        this.currentSlide = (this.currentSlide - 1 + this.slides.length) % this.slides.length;
-        this.updateSlider();
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    new WelcomeSlider();
-});
 
 function initFooterAccordion() {
     const footerToggles = document.querySelectorAll('.footer__toggle');
