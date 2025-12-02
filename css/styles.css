@@ -14,14 +14,14 @@
         .text-justify {
             text-align: justify;
         }
-        .h2-common-styles {
+        .h2 {
             letter-spacing: 0px;
             line-height: 38px;
             color: #606060;
             font-family: 'Century Gothic';
             font-weight: 300;
         }
-        .p-common-styles {
+        .p {
             font-size: 12px;
             letter-spacing: 0px;
             line-height: 23px;
