@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.header__link');
     navLinks.forEach(link => {
         link.addEventListener('click', function() {
-            // УБРАН e.preventDefault() - теперь ссылки работают
             closeMenu();
         });
     });
