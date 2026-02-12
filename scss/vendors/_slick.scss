@@ -1,0 +1,49 @@
+.home__slider {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  margin: 0 auto; 
+  z-index: 1;
+
+  .slick-list {
+    overflow: hidden;
+
+    &.draggable {
+      padding: 0;
+    }
+  }
+
+  .slick-track {
+    display: flex;
+    transition: none;
+  }
+
+  .home__slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 5px solid #e0e0e0;
+  }
+}
+
+.slick-prev { left: -15px; }
+.slick-next { right: -15px; }
+
+.slick-prev::before,
+.slick-next::before {
+  display: none;
+}
+
+.slick-slide {
+  transition: opacity 0.5s ease;
+
+  &.slick-active {
+    opacity: 1;
+  }
+}
+
+.slick-arrow.slick-disabled {
+  opacity: 1;
+  pointer-events: auto;
+}

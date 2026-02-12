@@ -1,0 +1,20 @@
+@use '../base/reset';
+@use '../base/base';
+@use '../base/typography';
+
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+@use '../layout/header';
+@use '../layout/footer';
+@use '../layout/container';
+
+@use '../sections/home';
+@use '../sections/about';
+@use '../sections/blog';
+@use '../sections/portfolio';
+
+@use '../components/slider';
+
+@use '../vendors/slick';
+

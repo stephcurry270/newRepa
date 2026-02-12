@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as v;
+
+h2 {
+  line-height: 38px;
+  color: #606060;
+  font-family: 'Century Gothic';
+}
+
+p {
+  font-size: v.$font-size-paragraph;
+  line-height: v.$line-height-paragraph;
+  color: #808080;
+}
+
+h2, p {
+  font-weight: 300;
+}

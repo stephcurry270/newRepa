@@ -1,0 +1,18 @@
+@use '../abstracts/mixins' as m;
+
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+
+  @include m.respond-to(large) {
+    margin: 0 50px;
+  }
+
+  @include m.respond-to(medium) {
+    margin: 0 30px;
+  }
+
+  @include m.respond-to(small) {
+    margin: 0 10px;
+  }
+}

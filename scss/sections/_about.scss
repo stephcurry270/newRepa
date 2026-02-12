@@ -1,0 +1,34 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.about__container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 39px;
+  border-bottom: 1px solid #777;
+  padding-top: 35px;
+  
+  @include m.respond-to(large) { 
+    grid-template-columns: 1fr; 
+  }
+
+  .about__paragraph {
+    padding-bottom: 35px;
+  }
+
+  .about__title { 
+    font-size: 22px; 
+  }
+
+  .about__texts_down { 
+    display: flex; 
+    font-family: v.$font-secondary; 
+    font-weight: bold; 
+    justify-content: end; 
+  }
+
+  .about__texts_up,
+  .about__texts_down { 
+    font-style: italic; 
+  }
+}

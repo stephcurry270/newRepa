@@ -1,0 +1,129 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.footer {
+  background-color: v.$color-footer-bg;
+
+  &__container {
+    width: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: start;
+    gap: 20px;
+    padding: 30px 0 105px 0;
+
+    @include m.respond-to(large) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include m.respond-to(medium) {
+      margin: 0px 30px;
+    }
+
+    @include m.respond-to(small) {
+      grid-template-columns: 1fr;
+      margin: 0px 10px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    color: v.$color-footer-text;
+    border-bottom: 1px solid v.$color-footer-border;
+    padding-bottom: 10px;
+
+    @include m.respond-to(small) {
+      margin: 0;
+      font-size: 20px;
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__text {
+    font-size: v.$font-size-h5;
+    border-bottom: 1px solid v.$color-footer-border;
+    padding: 10px 0;
+  }
+
+  &__link {
+    text-decoration: none;
+    transition: color 0.3s ease;
+    color: #989898;
+
+    &:hover,
+    &:active,
+    &-email:active,
+    &-email:hover {
+      color: v.$color-link-hover;
+    }
+  }
+
+  &__wrapper {
+    margin-bottom: 10px;
+    padding: 5px 0;
+    color: #989898;
+  }
+
+  &__toggle {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &.active &-icon {
+      transform: rotate(180deg);
+    } 
+
+    @include m.respond-to(small) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      transition: all 0.3s ease;
+    }
+
+    &-icon {
+      display: none;
+      color: #aaa;
+      font-size: 24px;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+
+      @include m.respond-to(small) {
+        display: flex;
+        font-size: 24px;
+        font-weight: bold;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  &__content {
+    display: block;
+
+    &.active {
+      max-height: 500px;
+    }
+
+    @include m.respond-to(small) {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+  }
+
+  &__copyright {
+    height: 75px;
+    background-color: black;
+    text-align: start;
+    padding-top: 20px;
+    border-top: 1px solid v.$color-footer-border;
+    color: v.$color-text-medium;
+  }
+}

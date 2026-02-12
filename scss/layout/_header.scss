@@ -1,0 +1,130 @@
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.header {
+  position: fixed;
+  background: v.$color-header-bg;
+  z-index: 100;
+  width: 100%;
+
+  &__container {
+    height: 100px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: space-between;
+    align-items: center;
+
+    @include m.respond-to(medium) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+  }
+
+  &__logo {
+    font-size: 45px;
+    font-weight: 300;
+    color: #ffffff;
+    filter: drop-shadow(0px 1px 1px rgba(0,0,0,0.7));
+
+    @include m.respond-to(medium) {
+      font-size: 28px;
+    }
+  }
+
+  &__nav {
+    margin-bottom: 0;
+
+    @include m.respond-to(medium){
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: v.$color-header-bg-clr;
+      z-index: 10000;
+      padding: 70px 20px;
+    }
+
+    &--open {
+      z-index: 1001;
+
+      @include m.respond-to(medium) {
+        display: block;
+        pointer-events: auto;
+      }
+    }
+
+    &-close {
+      display: none;
+
+      @include m.respond-to(medium) {
+        position: absolute;
+        top: 70px;
+        right: 60px;
+        background: none;
+        border: none;
+        color: v.$color-text-light;
+        font-size: 50px;
+        z-index: 1002;
+        display: flex;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+      }
+    }
+
+    .header__list {
+      display: flex;
+      justify-content: end;
+      gap: 30px;
+      list-style: none;
+
+      @include m.respond-to(medium) {
+        flex-direction: column;
+        padding-left: 40px;
+        font-size: 20px;
+      }
+
+      .header__item {
+        list-style: none;
+        margin: 0;
+
+        @include m.respond-to(medium) {
+          margin: 10px 0;
+        }
+
+        .header__link {
+          color: #949da6;
+          font-size: 15px;
+          transition: all 0.2s ease;
+          text-decoration: none;
+
+          &:hover,
+          &:active {
+            color: v.$color-link-hover;
+          }
+
+          @include m.respond-to(medium) {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  &__menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: v.$color-text-light;
+
+    @include m.respond-to(medium) {
+      display: block;
+    }
+  }
+}
+
