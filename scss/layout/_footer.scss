@@ -59,9 +59,8 @@
     }
   }
 
-  &__wrapper {
-    margin-bottom: 10px;
-    padding: 5px 0;
+  &__paragraph {
+    padding-top: 10px;
     color: #989898;
   }
 
@@ -127,3 +126,4 @@
     color: v.$color-text-medium;
   }
 }
+
