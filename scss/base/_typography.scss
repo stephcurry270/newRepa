@@ -10,8 +10,10 @@ p {
   font-size: v.$font-size-paragraph;
   line-height: v.$line-height-paragraph;
   color: #808080;
+  font-family: v.$font-secondary;
 }
 
 h2, p {
   font-weight: 300;
 }
+
