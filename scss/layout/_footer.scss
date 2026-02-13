@@ -27,7 +27,7 @@
   }
 
   &__title {
-    font-size: 16px;
+    font-size: v.$font-size-h5;
     color: v.$color-footer-text;
     border-bottom: 1px solid v.$color-footer-border;
     padding-bottom: 10px;
@@ -126,4 +126,5 @@
     color: v.$color-text-medium;
   }
 }
+
 
